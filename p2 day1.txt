@@ -1,0 +1,198 @@
+**OOPS
+1.instance variable can be accessed out side the class using obj.variable name
+2.class variables can be accessed inside the method using keyword self
+3.variables having local scope cannot be accessed outside the class
+EXAMPLE:
+class happy:
+    a=12
+    def method(self):
+        b=100
+        print(self.a)
+        print(b)
+obj=happy()
+print(obj.a)
+obj.method()
+ENCAPSULATION
+gives data security
+types
+1.public-> c
+2.private-> __a
+3.protect-> _a
+*Protected
+have to mention as _a called as protected variable
+Example
+##class encap:
+    _a=12
+    c=10
+    def encapfunction(self):
+        _b=120
+        print("encap function -accessing protected")
+        print(self._a+10)
+        print(_b)
+obj=encap()
+print(obj._a)
+obj.encapfunction()
+print(obj.c)
+*private
+use __a as a  variable
+Example
+##class encap:
+    __a=12
+    print(__a)
+    def encapfunction(self):
+        print("encap function")
+        print(self.__a)
+obj=encap()
+obj.encapfunction()
+## DATA STRUCTURES
+in order to structurise the data to keep it efficient in terms of memory usage extracting information is called data structures
+TYPES
+1.LINEAR
+  a.arrays
+  b.linked list
+  c.stacks
+  d.queue
+2.NON-LINEAR
+   a.trees
+   b.graphs
+   c.sets
+   d.tables
+
+## to add more than one element in a list we use l.extend([ elements we want to add])
+1.STATIC
+array
+2.DYNAMIC
+1.list
+2.stack
+3.queue
+**LINKED LIST
+list of data or items being linked with one another is called as linked lists
+ex: spotify,multiple URL's
+EVERY ELEMENT IN LIST IS CALLED NODE
+SINGLE LINKED LIST EXAMPLE
+##class node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class SLL:
+    def __init__(self):
+        self.head=None
+    def display(self):
+        if self.head is None:
+            print("LL is empty")
+        else:
+            temp=self.head
+            while(temp):
+                print(temp.data,"==>",end=" ")
+                temp=temp.next
+obj=SLL()
+n1=node(100)
+obj.head=n1
+n2=node(200)
+obj.head.next=n2
+n3=node(300)
+n2.next=n3
+obj.display()
+OPERATIONS OF SLL
+1.insert
+ a.at beginning
+ b.at end
+ c.at given position
+** INSERT AT BEGINING
+1.create new node which u want to insert
+2. make the new node point to current head node
+3.make your new node as head node
+## EXAMPLE
+class node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class SLL:
+    def __init__(self):
+        self.head=None
+    def insert_beginning(self,data):
+        nb=node(data)
+        nb.next=self.head
+        self.head=nb
+    
+    def display(self):
+        if self.head is None:
+            print("LL is empty")
+        else:
+            temp=self.head
+            while(temp):
+                print(temp.data,"==>",end=" ")
+                temp=temp.next
+obj=SLL()
+n=node(10)
+obj.head=n
+n1=node(20)
+n.next=n1
+n2=node(30)
+n1.next=n2
+n3=node(40)
+n2.next=n3
+n4=node(50)
+n3.next=n4
+print("before onserting 100")
+obj.display()
+print(" ")
+print("after inserting 100")
+obj.insert_beginning(100)
+obj.display()
+print(" ")
+print("after inserting 555")
+obj.insert_beginning(555)
+obj.display()
+## INSERTING AT END EXAMPLE
+class node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class SLL:
+    def __init__(self):
+        self.head=None
+    def insert_end(self,data):
+        ne=node(data)
+        temp=self.head
+        while temp.next:
+            temp=temp.next
+        temp.next=ne
+    def display(self):
+        if self.head is None:
+            print("LL is empty")
+        else:
+            temp=self.head
+            while(temp):
+                print(temp.data,"==>",end=" ")
+                temp=temp.next
+            
+obj=SLL()
+n=node(10)
+obj.head=n
+n1=node(20)
+n.next=n1
+n2=node(30)
+n1.next=n2
+n3=node(40)
+n2.next=n3
+n4=node(50)
+n3.next=n4
+print("before inserting 100")
+obj.display()
+print(" ")
+print("after inserting 100")
+obj.insert_end(100)
+obj.display()
+print(" ")
+print("after inserting 555")
+obj.insert_end(555)
+obj.display()
+
+
+
+
+
+
+
+    
